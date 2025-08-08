@@ -1,5 +1,5 @@
 import { env } from "./env.js";
-import { pino, type LoggerOptions } from "pino";
+import pino, { type LoggerOptions } from "pino";
 
 const loggerOptions: LoggerOptions = {
     redact: env.isProduction ? ["hostname"] : [],
