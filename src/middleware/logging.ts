@@ -5,8 +5,8 @@ import { log } from "../config/logger.js";
 export const logging: MiddlewareHandler = honoLogger(
   (msg?: string, ...rest: unknown[]) => {
     if (msg) {
-      // تأكد rest كلها يمكن طباعتها أو استعملها حسب حاجتك
-      log.info(msg, ...rest);
+      const args = rest.map(r => String(r));
+      log.info(msg, ...args);
     }
   }
 );
